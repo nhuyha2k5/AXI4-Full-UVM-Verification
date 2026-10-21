@@ -1,0 +1,22 @@
+# Sản phẩm sinh ra khi chạy (tái tạo bằng regress.ps1)
+build/
+logs/
+cov/ucdb/
+cov/merged/
+reports/regress_full.out
+*.wlf
+*.ucdb
+transcript
+tr_db.log
+vsim_stacktrace.vstf
+vish_stacktrace.vstf
+modelsim.tcl
+work/
+
+# Dữ liệu cũ / sao lưu cục bộ (rất nặng)
+_archive_old_flow/
+_backup_original_2026-10-11/
+
+# Python / tạm
+__pycache__/
+docs/_check.pdf

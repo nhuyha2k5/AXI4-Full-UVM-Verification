@@ -1,0 +1,169 @@
+Evidence for the known issues (docs/KNOWN_ISSUES.md), generated 2026-10-21 20:03 from the regression logs.
+
+====================================================================================================
+CDMA-01   testbench=cdma_orig   test=dma_cdma_offset_test   cfg=default   seed=1   regression result=XFAIL
+log: logs/cdma_orig/dma_cdma_offset_test__default__s1.log
+  DUT       :   axi_cdma (AXI_DATA_WIDTH=32 AXI_ADDR_WIDTH=32 AXI_MAX_BURST_LEN=16 ENABLE_UNALIGNED=1 LEN_WIDTH=20 TAG_WIDTH=8)
+  INTENT    : copies with every combination of source and destination byte offset are exact when read data arrives without gaps
+  STIMULUS  : for each of the 16 source/destination offset pairs: 3 descriptors of 70..200 bytes, no backpressure, descriptors queued back to back
+  error/fatal messages in the log: 6; first ones:
+    UVM_ERROR tb/tb_dma/dma_tb_pkg.sv(291) @ 4615000: uvm_test_top.env.sb [DMA_SB] destination 00000000117ac803 = 39, source 00000000d6820100 = 16: descriptor rd_addr=d6820100 wr_addr=117ac803 len=200 tag=1b id=78 dest=3e user=0
+    UVM_ERROR tb/tb_dma/dma_tb_pkg.sv(291) @ 5135000: uvm_test_top.env.sb [DMA_SB] destination 00000000c2a87803 = 62, source 00000000402be100 = cd: descriptor rd_addr=402be100 wr_addr=c2a87803 len=184 tag=69 id=c5 dest=d5 user=0
+    UVM_ERROR tb/tb_dma/dma_tb_pkg.sv(291) @ 5455000: uvm_test_top.env.sb [DMA_SB] destination 00000000203c3800 = 07, source 000000001bddb101 = 61: descriptor rd_addr=1bddb101 wr_addr=203c3800 len=111 tag=6d id=c3 dest=86 user=0
+  no TEST_RESULT line (the simulation was stopped by the watchdog or the error limit)
+
+====================================================================================================
+CDMA-01   testbench=cdma_up   test=dma_cdma_offset_test   cfg=default   seed=1   regression result=XFAIL
+log: logs/cdma_up/dma_cdma_offset_test__default__s1.log
+  DUT       :   axi_cdma (AXI_DATA_WIDTH=32 AXI_ADDR_WIDTH=32 AXI_MAX_BURST_LEN=16 ENABLE_UNALIGNED=1 LEN_WIDTH=20 TAG_WIDTH=8)
+  INTENT    : copies with every combination of source and destination byte offset are exact when read data arrives without gaps
+  STIMULUS  : for each of the 16 source/destination offset pairs: 3 descriptors of 70..200 bytes, no backpressure, descriptors queued back to back
+  error/fatal messages in the log: 6; first ones:
+    UVM_ERROR tb/tb_dma/dma_tb_pkg.sv(291) @ 4575000: uvm_test_top.env.sb [DMA_SB] destination 00000000117ac803 = 39, source 00000000d6820100 = 16: descriptor rd_addr=d6820100 wr_addr=117ac803 len=200 tag=1b id=78 dest=3e user=0
+    UVM_ERROR tb/tb_dma/dma_tb_pkg.sv(291) @ 5095000: uvm_test_top.env.sb [DMA_SB] destination 00000000c2a87803 = 62, source 00000000402be100 = cd: descriptor rd_addr=402be100 wr_addr=c2a87803 len=184 tag=69 id=c5 dest=d5 user=0
+    UVM_ERROR tb/tb_dma/dma_tb_pkg.sv(291) @ 5415000: uvm_test_top.env.sb [DMA_SB] destination 00000000203c3800 = 07, source 000000001bddb101 = 61: descriptor rd_addr=1bddb101 wr_addr=203c3800 len=111 tag=6d id=c3 dest=86 user=0
+  no TEST_RESULT line (the simulation was stopped by the watchdog or the error limit)
+
+====================================================================================================
+DMAWR-01   testbench=dma_wr_orig   test=dma_wr_short_frame_split_test   cfg=default   seed=1   regression result=XFAIL
+log: logs/dma_wr_orig/dma_wr_short_frame_split_test__default__s1.log
+  DUT       : axi_dma_wr (AXI_DATA_WIDTH=32 AXI_ADDR_WIDTH=32 AXI_MAX_BURST_LEN=16 ENABLE_UNALIGNED=1 LEN_WIDTH=20 TAG_WIDTH=8)
+  INTENT    : a frame shorter than its descriptor, whose last beat is split over two AXI bursts, does not disturb the next frame
+  STIMULUS  : descriptors starting 1..3 bytes before a 4 KB boundary with frames 1..4 bytes shorter than the descriptor, alternating with ordinary descriptors; frames sent back to back
+  error/fatal messages in the log: 8; first ones:
+    UVM_ERROR tb/tb_dma/dma_tb_pkg.sv(291) @ 2715000: uvm_test_top.env.sb [DMA_SB] status id/dest/user = 9/b9/1, frame had 51/4b/0: descriptor rd_addr=1ab74caa wr_addr=0b93dffe len=5 tag=48 id=64 dest=64 user=0
+    UVM_ERROR tb/tb_dma/dma_tb_pkg.sv(291) @ 2835000: uvm_test_top.env.sb [DMA_SB] status len 23, expected 27 (descriptor 27, frame 27 bytes): descriptor rd_addr=0fd0fffa wr_addr=893ead5a len=27 tag=6c id=b2 dest=58 user=1
+    UVM_ERROR tb/tb_dma/dma_tb_pkg.sv(291) @ 2835000: uvm_test_top.env.sb [DMA_SB] 23 bytes written on AXI, expected 27: descriptor rd_addr=0fd0fffa wr_addr=893ead5a len=27 tag=6c id=b2 dest=58 user=1
+  TEST_RESULT: FAILED test=dma_wr_short_frame_split_test seed=1
+
+====================================================================================================
+DMAWR-01   testbench=dma_wr_up   test=dma_wr_short_frame_split_test   cfg=default   seed=1   regression result=XFAIL
+log: logs/dma_wr_up/dma_wr_short_frame_split_test__default__s1.log
+  DUT       : axi_dma_wr (AXI_DATA_WIDTH=32 AXI_ADDR_WIDTH=32 AXI_MAX_BURST_LEN=16 ENABLE_UNALIGNED=1 LEN_WIDTH=20 TAG_WIDTH=8)
+  INTENT    : a frame shorter than its descriptor, whose last beat is split over two AXI bursts, does not disturb the next frame
+  STIMULUS  : descriptors starting 1..3 bytes before a 4 KB boundary with frames 1..4 bytes shorter than the descriptor, alternating with ordinary descriptors; frames sent back to back
+  error/fatal messages in the log: 8; first ones:
+    UVM_ERROR tb/tb_dma/dma_tb_pkg.sv(291) @ 2435000: uvm_test_top.env.sb [DMA_SB] status id/dest/user = 9/b9/1, frame had 51/4b/0: descriptor rd_addr=1ab74caa wr_addr=0b93dffe len=5 tag=48 id=64 dest=64 user=0
+    UVM_ERROR tb/tb_dma/dma_tb_pkg.sv(291) @ 2535000: uvm_test_top.env.sb [DMA_SB] status len 23, expected 27 (descriptor 27, frame 27 bytes): descriptor rd_addr=0fd0fffa wr_addr=893ead5a len=27 tag=6c id=b2 dest=58 user=1
+    UVM_ERROR tb/tb_dma/dma_tb_pkg.sv(291) @ 2535000: uvm_test_top.env.sb [DMA_SB] 23 bytes written on AXI, expected 27: descriptor rd_addr=0fd0fffa wr_addr=893ead5a len=27 tag=6c id=b2 dest=58 user=1
+  TEST_RESULT: FAILED test=dma_wr_short_frame_split_test seed=1
+
+====================================================================================================
+RAM-01   testbench=ram   test=axi_ram_wrap_test   cfg=default   seed=1   regression result=XFAIL
+log: logs/ram/axi_ram_wrap_test__default__s1.log
+  DUT       : axi_ram (DATA_WIDTH=32 ADDR_WIDTH=16 ID_WIDTH=8 PIPELINE_OUTPUT=0 INIT_FILE="")
+  INTENT    : WRAP bursts wrap at the burst-size boundary as AXI4 requires
+  STIMULUS  : axi4_wrap_seq: WRAP bursts of 2/4/8/16 beats starting above the wrap boundary, written then read with INCR
+  error/fatal messages in the log: 21; first ones:
+    UVM_ERROR axi4_vip/axi4_mem_scoreboard.sv(153) @ 3125000: uvm_test_top.env.sb [AXI_SB] read data mismatch at byte 0000000000001040: expected 8e, got 00 (beat 0 lane 0 of RD id=65 addr=1040 len=15 size=2 AXI4_BURST_INCR rdata=[00000000 00000000 00000000 00000000 ..+12] rresp=AXI4_RESP_OKAY     )
+    UVM_ERROR axi4_vip/axi4_mem_scoreboard.sv(153) @ 3125000: uvm_test_top.env.sb [AXI_SB] read data mismatch at byte 0000000000001041: expected d1, got 00 (beat 0 lane 1 of RD id=65 addr=1040 len=15 size=2 AXI4_BURST_INCR rdata=[00000000 00000000 00000000 00000000 ..+12] rresp=AXI4_RESP_OKAY     )
+    UVM_ERROR axi4_vip/axi4_mem_scoreboard.sv(153) @ 3125000: uvm_test_top.env.sb [AXI_SB] read data mismatch at byte 0000000000001042: expected 8d, got 00 (beat 0 lane 2 of RD id=65 addr=1040 len=15 size=2 AXI4_BURST_INCR rdata=[00000000 00000000 00000000 00000000 ..+12] rresp=AXI4_RESP_OKAY     )
+  TEST_RESULT: FAILED test=axi_ram_wrap_test seed=1
+
+====================================================================================================
+XBAR-01   testbench=xbar   test=xbar_decerr_b_order_test   cfg=default   seed=1   regression result=XFAIL
+log: logs/xbar/xbar_decerr_b_order_test__default__s1.log
+  DUT       : axi_crossbar (S_COUNT=2 M_COUNT=3 M_REGIONS=3 DATA=32 ADDR=32 S_ID=4 M_ID=5 USER=2, see tb/tb_xbar/xbar_cfg_pkg.sv)
+  INTENT    : a write that the crossbar rejects with DECERR is answered only after its write data has been accepted (AXI4 A3.3.1)
+  STIMULUS  : master 0 writes 8-beat bursts to unmapped addresses with slow write data
+  error/fatal messages in the log: 10; first ones:
+    UVM_ERROR axi4_vip/axi4_monitor.sv(62) @ 125000: uvm_test_top.env.mst0.monitor [AXI_PROTOCOL] mst0: write id=e addr=7b35eb8a: BVALID asserted before the last W beat was accepted (response AXI4_RESP_DECERR issued too early)
+    UVM_ERROR axi4_vip/axi4_monitor.sv(62) @ 185000: uvm_test_top.env.mst0.monitor [AXI_PROTOCOL] mst0: B response with BID=f has no accepted AW (response AXI4_RESP_DECERR issued too early)
+    UVM_ERROR axi4_vip/axi4_monitor.sv(62) @ 2685000: uvm_test_top.env.mst0.monitor [AXI_PROTOCOL] mst0: B response with BID=d has no accepted AW (response AXI4_RESP_DECERR issued too early)
+  TEST_RESULT: FAILED test=xbar_decerr_b_order_test seed=1
+
+====================================================================================================
+XBAR-02   testbench=xbar_orig   test=xbar_decerr_lockup_test   cfg=default   seed=1   regression result=XFAIL
+log: logs/xbar_orig/xbar_decerr_lockup_test__default__s1.log
+  DUT       : axi_crossbar (S_COUNT=2 M_COUNT=3 M_REGIONS=3 DATA=32 ADDR=32 S_ID=4 M_ID=5 USER=2, see tb/tb_xbar/xbar_cfg_pkg.sv)
+  INTENT    : after DECERR responses a master can still use every slave (transaction counters stay balanced)
+  STIMULUS  : per master, repeated: one write and one read to unmapped space while idle, then 6 write-then-read bursts to mapped regions
+  error/fatal messages in the log: 2; first ones:
+    UVM_ERROR axi4_vip/axi4_monitor.sv(62) @ 200415000: uvm_test_top.env.mst1.monitor [AXI_PROTOCOL] mst1: read id=7 addr=01bb7d97 outstanding for 20000 cycles
+    UVM_FATAL tb/common/dv_common_pkg.sv(138) @ 2000000000: uvm_test_top [DV_TIMEOUT] test did not finish within 2000 us of simulated time
+  no TEST_RESULT line (the simulation was stopped by the watchdog or the error limit)
+
+====================================================================================================
+XBAR-03   testbench=sys   test=sys_decerr_pipelined_test   cfg=default   seed=1   regression result=XFAIL
+log: logs/sys/sys_decerr_pipelined_test__default__s1.log
+  DUT       : system: axi_cdma + AXI4 VIP master -> axi_crossbar (2x2, default address map) -> 2 x axi_ram (PIPELINE_OUTPUT 0 and 1); RTL built with the opt-in fixes listed for testbench sys in scripts/dv_config.ps1
+  INTENT    : a DMA copy to an unmapped destination that directly follows a legal copy reports the DECERR in its own status, and the legal copy reports no error
+  STIMULUS  : 10 pairs of descriptors issued back to back (legal copy, then a copy with an unmapped destination) while the cpu writes long bursts to the same RAMs
+  error/fatal messages in the log: 21; first ones:
+    UVM_ERROR axi4_vip/axi4_monitor.sv(62) @ 170675000: uvm_test_top.env.dma_port.monitor [AXI_PROTOCOL] dma_port: write id=0 addr=70000280: BVALID asserted before the last W beat was accepted (response AXI4_RESP_OKAY issued too early)
+    UVM_ERROR axi4_vip/axi4_monitor.sv(62) @ 174305000: uvm_test_top.env.dma_port.monitor [AXI_PROTOCOL] dma_port: write id=0 addr=70000f8e: BVALID asserted before the last W beat was accepted (response AXI4_RESP_OKAY issued too early)
+    UVM_ERROR tb/tb_dma/dma_tb_pkg.sv(291) @ 174395000: uvm_test_top.env.dma_sb [DMA_SB] status error 7, expected 0 (from the AXI responses seen): descriptor rd_addr=0000e1ef wr_addr=70000f8e len=69 tag=6d id=0 dest=0 user=0
+  TEST_RESULT: FAILED test=sys_decerr_pipelined_test seed=1
+
+====================================================================================================
+XBAR-03   testbench=xbar   test=xbar_decerr_id_order_test   cfg=default   seed=1   regression result=XFAIL
+log: logs/xbar/xbar_decerr_id_order_test__default__s1.log
+  DUT       : axi_crossbar (S_COUNT=2 M_COUNT=3 M_REGIONS=3 DATA=32 ADDR=32 S_ID=4 M_ID=5 USER=2, see tb/tb_xbar/xbar_cfg_pkg.sv)
+  INTENT    : a DECERR response keeps its place among the responses of the same ID (AXI4 A5.3.1 ordering)
+  STIMULUS  : master 1, one ID only: pipelined writes and reads to a slow slave mixed with accesses to unmapped space
+  error/fatal messages in the log: 84; first ones:
+    UVM_ERROR tb/tb_xbar/xbar_test_pkg.sv(147) @ 425000: uvm_test_top.env.sb [XBAR_SB] master 1 -> slave 2: mismatch in BRESP(master AXI4_RESP_DECERR, slave AXI4_RESP_OKAY) BUSER
+    UVM_ERROR axi4_vip/axi4_monitor.sv(62) @ 435000: uvm_test_top.env.mst1.monitor [AXI_PROTOCOL] mst1: read id=5 addr=0fcfb03e: RLAST=0 on beat 1 of 1
+    UVM_ERROR tb/tb_xbar/xbar_test_pkg.sv(147) @ 445000: uvm_test_top.env.sb [XBAR_SB] master 1: expected DECERR (XBAR_UNMAPPED) but got AXI4_RESP_OKAY: WR id=5 addr=efe05705 len=2 size=2 AXI4_BURST_INCR lock=1 cache=d prot=2 qos=6 region=e data=[60b611c0 2ae0e76e 5a30db34] strb0=e bresp=AXI4_RESP_OKAY
+  TEST_RESULT: FAILED test=xbar_decerr_id_order_test seed=1
+
+====================================================================================================
+XBAR-04   testbench=xbar   test=xbar_read_interleave_test   cfg=default   seed=1   regression result=XFAIL
+log: logs/xbar/xbar_read_interleave_test__default__s1.log
+  DUT       : axi_crossbar (S_COUNT=2 M_COUNT=3 M_REGIONS=3 DATA=32 ADDR=32 S_ID=4 M_ID=5 USER=2, see tb/tb_xbar/xbar_cfg_pkg.sv)
+  INTENT    : read data that a slave interleaves between bursts of different IDs (allowed by AXI4) reaches only the master it belongs to
+  STIMULUS  : both masters read slave 0 with pipelined multi-beat bursts; the slave interleaves R beats of different IDs
+  error/fatal messages in the log: 100; first ones:
+    UVM_ERROR axi4_vip/axi4_master_driver.sv(211) @ 165000: uvm_test_top.env.mst1.driver [AXI_DRV] mst1: R beat with RID=2 matches no outstanding read
+    UVM_ERROR axi4_vip/axi4_monitor.sv(62) @ 165000: uvm_test_top.env.mst1.monitor [AXI_PROTOCOL] mst1: R beat with RID=2 has no accepted AR (response AXI4_RESP_OKAY issued too early)
+    UVM_ERROR axi4_vip/axi4_monitor.sv(62) @ 175000: uvm_test_top.env.mst1.monitor [AXI_PROTOCOL] mst1: R beat with RID=2 has no accepted AR (response AXI4_RESP_OKAY issued too early)
+  no TEST_RESULT line (the simulation was stopped by the watchdog or the error limit)
+
+====================================================================================================
+XBAR-05   testbench=xbar_fix02   test=xbar_decerr_wdata_test   cfg=default   seed=1   regression result=XFAIL
+log: logs/xbar_fix02/xbar_decerr_wdata_test__default__s1.log
+  DUT       : axi_crossbar (S_COUNT=2 M_COUNT=3 M_REGIONS=3 DATA=32 ADDR=32 S_ID=4 M_ID=5 USER=2, see tb/tb_xbar/xbar_cfg_pkg.sv)
+  INTENT    : write data of a legal write that follows a rejected (DECERR) write arrives complete at the slave
+  STIMULUS  : master 1, pipelined: multi-beat writes alternating between slave 0 and unmapped space, AW delayed and W not delayed so data waits at the crossbar
+  error/fatal messages in the log: 61; first ones:
+    UVM_ERROR axi4_vip/axi4_monitor.sv(62) @ 1765000: uvm_test_top.env.slv0.monitor [AXI_PROTOCOL] slv0: write id=11 addr=f012ccbe: 26 W beats for AWLEN=26 (WLAST misplaced)
+    UVM_ERROR tb/tb_xbar/xbar_test_pkg.sv(147) @ 1795000: uvm_test_top.env.sb [XBAR_SB] master 1 -> slave 0: mismatch in W beat count
+    UVM_ERROR axi4_vip/axi4_monitor.sv(62) @ 3535000: uvm_test_top.env.slv0.monitor [AXI_PROTOCOL] slv0: write id=16 addr=040b882a: 17 W beats for AWLEN=17 (WLAST misplaced)
+  TEST_RESULT: FAILED test=xbar_decerr_wdata_test seed=1
+
+====================================================================================================
+XBAR-06   testbench=xbar_orig   test=xbar_param_test   cfg=default   seed=1   regression result=XFAIL
+log: logs/xbar_orig/xbar_param_test__default__s1.log
+  DUT       : axi_crossbar (S_COUNT=2 M_COUNT=3 M_REGIONS=3 DATA=32 ADDR=32 S_ID=4 M_ID=5 USER=2, see tb/tb_xbar/xbar_cfg_pkg.sv)
+  INTENT    : the register-slice types requested with M_AW/W/B/AR/R_REG_TYPE are the ones built into the crossbar
+  STIMULUS  : elaborated parameters of axi_crossbar_wr and axi_crossbar_rd read back by the testbench top; one write-then-read per master and slave
+  error/fatal messages in the log: 5; first ones:
+    UVM_ERROR tb/tb_xbar/xbar_test_pkg.sv(646) @ 55000: uvm_test_top [XBAR_PARAM] M_AW_REG_TYPE: requested 6'b001001 at axi_crossbar, built with 6'b010101 (parameter not passed on)
+    UVM_ERROR tb/tb_xbar/xbar_test_pkg.sv(646) @ 55000: uvm_test_top [XBAR_PARAM] M_W_REG_TYPE: requested 6'b000110 at axi_crossbar, built with 6'b101010 (parameter not passed on)
+    UVM_ERROR tb/tb_xbar/xbar_test_pkg.sv(646) @ 55000: uvm_test_top [XBAR_PARAM] M_B_REG_TYPE: requested 6'b011000 at axi_crossbar, built with 6'b000000 (parameter not passed on)
+  TEST_RESULT: FAILED test=xbar_param_test seed=1
+
+====================================================================================================
+XBAR-07   testbench=xbar_fix06   test=xbar_smoke_test   cfg=default   seed=1   regression result=XFAIL
+log: logs/xbar_fix06/xbar_smoke_test__default__s1.log
+  DUT       : axi_crossbar (S_COUNT=2 M_COUNT=3 M_REGIONS=3 DATA=32 ADDR=32 S_ID=4 M_ID=5 USER=2, see tb/tb_xbar/xbar_cfg_pkg.sv)
+  INTENT    : every master reaches every region of every slave it is connected to, one at a time
+  STIMULUS  : per master: write-then-read of 4 random bursts in each configured region, masters one after the other
+  error/fatal messages in the log: 8; first ones:
+    UVM_ERROR axi4_vip/axi4_monitor.sv(62) @ 5095000: uvm_test_top.env.mst1.monitor [AXI_PROTOCOL] mst1: R beat with RID=9 has no accepted AR (response AXI4_RESP_OKAY issued too early)
+    UVM_ERROR axi4_vip/axi4_master_driver.sv(211) @ 5095000: uvm_test_top.env.mst1.driver [AXI_DRV] mst1: R beat with RID=9 matches no outstanding read
+    UVM_ERROR axi4_vip/axi4_master_driver.sv(211) @ 5105000: uvm_test_top.env.mst0.driver [AXI_DRV] mst0: R beat with RID=9 matches no outstanding read
+  no TEST_RESULT line (the simulation was stopped by the watchdog or the error limit)
+
+====================================================================================================
+XBAR-08   testbench=xbar_fix07   test=xbar_issue_limit_test   cfg=open   seed=1   regression result=XFAIL
+log: logs/xbar_fix07/xbar_issue_limit_test__open__s1.log
+  DUT       : axi_crossbar (S_COUNT=2 M_COUNT=3 M_REGIONS=3 DATA=32 ADDR=32 S_ID=4 M_ID=5 USER=2, see tb/tb_xbar/xbar_cfg_pkg.sv)
+  INTENT    : M_ISSUE and S_ACCEPT throttle new addresses while responses are outstanding and let them through as soon as one completes
+  STIMULUS  : 3 phases, one per slave: both masters send pipelined single-beat and short bursts to that slave only; slave answers after up to 30 cycles
+  error/fatal messages in the log: 3; first ones:
+    UVM_ERROR tb/tb_xbar/xbar_test_pkg.sv(338) @ 135000: uvm_test_top.env.limits [XBAR_LIMIT] slave port 0, reads (M_ISSUE): 2 in flight, limit is 1 (further violations of this limit are counted, not printed)
+    UVM_ERROR tb/tb_xbar/xbar_test_pkg.sv(338) @ 43365000: uvm_test_top.env.limits [XBAR_LIMIT] slave port 1, reads (M_ISSUE): 5 in flight, limit is 4 (further violations of this limit are counted, not printed)
+    UVM_ERROR tb/tb_xbar/xbar_test_pkg.sv(338) @ 58255000: uvm_test_top.env.limits [XBAR_LIMIT] slave port 2, reads (M_ISSUE): 3 in flight, limit is 2 (further violations of this limit are counted, not printed)
+  TEST_RESULT: FAILED test=xbar_issue_limit_test seed=1
+

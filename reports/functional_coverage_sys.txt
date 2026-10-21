@@ -1,0 +1,522 @@
+COVERGROUP COVERAGE:
+-----------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal    Status               
+                                                                                              
+-----------------------------------------------------------------------------------------------
+ TYPE /axi4_pkg/axi4_cg_len_short                     100.00%        100    Covered              
+    covered/total bins:                                     8          8                      
+    missing/total bins:                                     0          8                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint axi4_cg_len_short::cp_len              100.00%        100    Covered              
+        covered/total bins:                                 8          8                      
+        missing/total bins:                                 0          8                      
+        % Hit:                                        100.00%        100                      
+ Covergroup instance cpu_rd_len_short                 100.00%        100    Covered              
+    covered/total bins:                                     4          4                      
+    missing/total bins:                                     0          4                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint cp_len                                 100.00%        100    Covered              
+        covered/total bins:                                 4          4                      
+        missing/total bins:                                 0          4                      
+        % Hit:                                        100.00%        100                      
+        bin beats_1                                         7          1    Covered              
+        bin beats_2_4                                      28          1    Covered              
+        bin beats_5_8                                      65          1    Covered              
+        bin beats_9_16                                    112          1    Covered              
+ Covergroup instance cpu_wr_len_short                 100.00%        100    Covered              
+    covered/total bins:                                     4          4                      
+    missing/total bins:                                     0          4                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint cp_len                                 100.00%        100    Covered              
+        covered/total bins:                                 4          4                      
+        missing/total bins:                                 0          4                      
+        % Hit:                                        100.00%        100                      
+        bin beats_1                                        13          1    Covered              
+        bin beats_2_4                                      22          1    Covered              
+        bin beats_5_8                                      59          1    Covered              
+        bin beats_9_16                                    111          1    Covered              
+ TYPE /axi4_pkg/axi4_cg_len_long                      100.00%        100    Covered              
+    covered/total bins:                                     8          8                      
+    missing/total bins:                                     0          8                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint axi4_cg_len_long::cp_len               100.00%        100    Covered              
+        covered/total bins:                                 8          8                      
+        missing/total bins:                                 0          8                      
+        % Hit:                                        100.00%        100                      
+ Covergroup instance cpu_rd_len_long                  100.00%        100    Covered              
+    covered/total bins:                                     4          4                      
+    missing/total bins:                                     0          4                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint cp_len                                 100.00%        100    Covered              
+        covered/total bins:                                 4          4                      
+        missing/total bins:                                 0          4                      
+        % Hit:                                        100.00%        100                      
+        bin beats_17_64                                   314          1    Covered              
+        bin beats_65_128                                  318          1    Covered              
+        bin beats_129_255                                 562          1    Covered              
+        bin beats_256                                     706          1    Covered              
+ Covergroup instance cpu_wr_len_long                  100.00%        100    Covered              
+    covered/total bins:                                     4          4                      
+    missing/total bins:                                     0          4                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint cp_len                                 100.00%        100    Covered              
+        covered/total bins:                                 4          4                      
+        missing/total bins:                                 0          4                      
+        % Hit:                                        100.00%        100                      
+        bin beats_17_64                                   339          1    Covered              
+        bin beats_65_128                                  335          1    Covered              
+        bin beats_129_255                                 552          1    Covered              
+        bin beats_256                                     705          1    Covered              
+ TYPE /axi4_pkg/axi4_cg_burst                         100.00%        100    Covered              
+    covered/total bins:                                     4          4                      
+    missing/total bins:                                     0          4                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint axi4_cg_burst::cp_burst                100.00%        100    Covered              
+        covered/total bins:                                 4          4                      
+        missing/total bins:                                 0          4                      
+        % Hit:                                        100.00%        100                      
+ Covergroup instance cpu_rd_burst                     100.00%        100    Covered              
+    covered/total bins:                                     2          2                      
+    missing/total bins:                                     0          2                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint cp_burst                               100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+        bin fixed                                         112          1    Covered              
+        bin incr                                         2000          1    Covered              
+ Covergroup instance cpu_wr_burst                     100.00%        100    Covered              
+    covered/total bins:                                     2          2                      
+    missing/total bins:                                     0          2                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint cp_burst                               100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+        bin fixed                                          96          1    Covered              
+        bin incr                                         2038          1    Covered              
+ TYPE /axi4_pkg/axi4_cg_size                          100.00%        100    Covered              
+    covered/total bins:                                     6          6                      
+    missing/total bins:                                     0          6                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint axi4_cg_size::cp_size                  100.00%        100    Covered              
+        covered/total bins:                                 6          6                      
+        missing/total bins:                                 0          6                      
+        % Hit:                                        100.00%        100                      
+ Covergroup instance cpu_rd_size                      100.00%        100    Covered              
+    covered/total bins:                                     3          3                      
+    missing/total bins:                                     0          3                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint cp_size                                100.00%        100    Covered              
+        covered/total bins:                                 3          3                      
+        missing/total bins:                                 0          3                      
+        % Hit:                                        100.00%        100                      
+        bin sz[0]                                         503          1    Covered              
+        bin sz[1]                                         478          1    Covered              
+        bin sz[2]                                        1131          1    Covered              
+ Covergroup instance cpu_wr_size                      100.00%        100    Covered              
+    covered/total bins:                                     3          3                      
+    missing/total bins:                                     0          3                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint cp_size                                100.00%        100    Covered              
+        covered/total bins:                                 3          3                      
+        missing/total bins:                                 0          3                      
+        % Hit:                                        100.00%        100                      
+        bin sz[0]                                         530          1    Covered              
+        bin sz[1]                                         463          1    Covered              
+        bin sz[2]                                        1143          1    Covered              
+ TYPE /axi4_pkg/axi4_cg_align                         100.00%        100    Covered              
+    covered/total bins:                                     4          4                      
+    missing/total bins:                                     0          4                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint axi4_cg_align::cp_align                100.00%        100    Covered              
+        covered/total bins:                                 4          4                      
+        missing/total bins:                                 0          4                      
+        % Hit:                                        100.00%        100                      
+ Covergroup instance cpu_rd_align                     100.00%        100    Covered              
+    covered/total bins:                                     2          2                      
+    missing/total bins:                                     0          2                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint cp_align                               100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+        bin aligned                                      1530          1    Covered              
+        bin unaligned                                     582          1    Covered              
+ Covergroup instance cpu_wr_align                     100.00%        100    Covered              
+    covered/total bins:                                     2          2                      
+    missing/total bins:                                     0          2                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint cp_align                               100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+        bin aligned                                      1553          1    Covered              
+        bin unaligned                                     583          1    Covered              
+ TYPE /axi4_pkg/axi4_cg_id                            100.00%        100    Covered              
+    covered/total bins:                                     6          6                      
+    missing/total bins:                                     0          6                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint axi4_cg_id::cp_id                      100.00%        100    Covered              
+        covered/total bins:                                 6          6                      
+        missing/total bins:                                 0          6                      
+        % Hit:                                        100.00%        100                      
+ Covergroup instance cpu_rd_id                        100.00%        100    Covered              
+    covered/total bins:                                     3          3                      
+    missing/total bins:                                     0          3                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint cp_id                                  100.00%        100    Covered              
+        covered/total bins:                                 3          3                      
+        missing/total bins:                                 0          3                      
+        % Hit:                                        100.00%        100                      
+        bin id_zero                                        13          1    Covered              
+        bin id_max                                          9          1    Covered              
+        bin id_mid                                       2090          1    Covered              
+ Covergroup instance cpu_wr_id                        100.00%        100    Covered              
+    covered/total bins:                                     3          3                      
+    missing/total bins:                                     0          3                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint cp_id                                  100.00%        100    Covered              
+        covered/total bins:                                 3          3                      
+        missing/total bins:                                 0          3                      
+        % Hit:                                        100.00%        100                      
+        bin id_zero                                         9          1    Covered              
+        bin id_max                                          5          1    Covered              
+        bin id_mid                                       2122          1    Covered              
+ TYPE /axi4_pkg/axi4_cg_outstanding                   100.00%        100    Covered              
+    covered/total bins:                                     4          4                      
+    missing/total bins:                                     0          4                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint axi4_cg_outstanding::cp_outstanding    100.00%        100    Covered              
+        covered/total bins:                                 4          4                      
+        missing/total bins:                                 0          4                      
+        % Hit:                                        100.00%        100                      
+ Covergroup instance cpu_rd_outstanding               100.00%        100    Covered              
+    covered/total bins:                                     2          2                      
+    missing/total bins:                                     0          2                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint cp_outstanding                         100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+        bin none                                         1465          1    Covered              
+        bin one                                           631          1    Covered              
+ Covergroup instance cpu_wr_outstanding               100.00%        100    Covered              
+    covered/total bins:                                     2          2                      
+    missing/total bins:                                     0          2                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint cp_outstanding                         100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+        bin none                                          914          1    Covered              
+        bin one                                          1222          1    Covered              
+ TYPE /axi4_pkg/axi4_cg_outstanding_deep               50.00%        100    Uncovered            
+    covered/total bins:                                     1          2                      
+    missing/total bins:                                     1          2                      
+    % Hit:                                             50.00%        100                      
+    Coverpoint axi4_cg_outstanding_deep::cp_outstanding 
+                                                       50.00%        100    Uncovered            
+        covered/total bins:                                 1          2                      
+        missing/total bins:                                 1          2                      
+        % Hit:                                         50.00%        100                      
+ Covergroup instance cpu_rd_outstanding_deep          100.00%        100    Covered              
+    covered/total bins:                                     1          1                      
+    missing/total bins:                                     0          1                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint cp_outstanding                         100.00%        100    Covered              
+        covered/total bins:                                 1          1                      
+        missing/total bins:                                 0          1                      
+        % Hit:                                        100.00%        100                      
+        bin two_plus                                       16          1    Covered              
+ Covergroup instance cpu_wr_outstanding_deep            0.00%        100    ZERO                 
+    covered/total bins:                                     0          1                      
+    missing/total bins:                                     1          1                      
+    % Hit:                                              0.00%        100                      
+    Coverpoint cp_outstanding                           0.00%        100    ZERO                 
+        covered/total bins:                                 0          1                      
+        missing/total bins:                                 1          1                      
+        % Hit:                                          0.00%        100                      
+        bin two_plus                                        0          1    ZERO                 
+ TYPE /axi4_pkg/axi4_cg_stall                         100.00%        100    Covered              
+    covered/total bins:                                     8          8                      
+    missing/total bins:                                     0          8                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint axi4_cg_stall::cp_addr_stall           100.00%        100    Covered              
+        covered/total bins:                                 4          4                      
+        missing/total bins:                                 0          4                      
+        % Hit:                                        100.00%        100                      
+    Coverpoint axi4_cg_stall::cp_data_stall           100.00%        100    Covered              
+        covered/total bins:                                 4          4                      
+        missing/total bins:                                 0          4                      
+        % Hit:                                        100.00%        100                      
+ Covergroup instance cpu_rd_stall                     100.00%        100    Covered              
+    covered/total bins:                                     4          4                      
+    missing/total bins:                                     0          4                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint cp_addr_stall                          100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+        bin short_                                       1456          1    Covered              
+        bin long_                                         656          1    Covered              
+    Coverpoint cp_data_stall                          100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+        bin short_                                       1192          1    Covered              
+        bin long_                                         512          1    Covered              
+ Covergroup instance cpu_wr_stall                     100.00%        100    Covered              
+    covered/total bins:                                     4          4                      
+    missing/total bins:                                     0          4                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint cp_addr_stall                          100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+        bin short_                                        530          1    Covered              
+        bin long_                                        1606          1    Covered              
+    Coverpoint cp_data_stall                          100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+        bin short_                                       1222          1    Covered              
+        bin long_                                         481          1    Covered              
+ TYPE /axi4_pkg/axi4_cg_bstall                        100.00%        100    Covered              
+    covered/total bins:                                     1          1                      
+    missing/total bins:                                     0          1                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint axi4_cg_bstall::cp_resp_stall          100.00%        100    Covered              
+        covered/total bins:                                 1          1                      
+        missing/total bins:                                 0          1                      
+        % Hit:                                        100.00%        100                      
+ Covergroup instance cpu_wr_bstall                    100.00%        100    Covered              
+    covered/total bins:                                     1          1                      
+    missing/total bins:                                     0          1                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint cp_resp_stall                          100.00%        100    Covered              
+        covered/total bins:                                 1          1                      
+        missing/total bins:                                 0          1                      
+        % Hit:                                        100.00%        100                      
+        bin stalled                                       394          1    Covered              
+ TYPE /axi4_pkg/axi4_cg_nostall                       100.00%        100    Covered              
+    covered/total bins:                                     3          3                      
+    missing/total bins:                                     0          3                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint axi4_cg_nostall::cp_stall              100.00%        100    Covered              
+        covered/total bins:                                 3          3                      
+        missing/total bins:                                 0          3                      
+        % Hit:                                        100.00%        100                      
+ Covergroup instance cpu_rd_data_nostall              100.00%        100    Covered              
+    covered/total bins:                                     1          1                      
+    missing/total bins:                                     0          1                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint cp_stall                               100.00%        100    Covered              
+        covered/total bins:                                 1          1                      
+        missing/total bins:                                 0          1                      
+        % Hit:                                        100.00%        100                      
+        bin none                                          408          1    Covered              
+ Covergroup instance cpu_wr_data_nostall              100.00%        100    Covered              
+    covered/total bins:                                     1          1                      
+    missing/total bins:                                     0          1                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint cp_stall                               100.00%        100    Covered              
+        covered/total bins:                                 1          1                      
+        missing/total bins:                                 0          1                      
+        % Hit:                                        100.00%        100                      
+        bin none                                          433          1    Covered              
+ Covergroup instance cpu_wr_resp_nostall              100.00%        100    Covered              
+    covered/total bins:                                     1          1                      
+    missing/total bins:                                     0          1                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint cp_stall                               100.00%        100    Covered              
+        covered/total bins:                                 1          1                      
+        missing/total bins:                                 0          1                      
+        % Hit:                                        100.00%        100                      
+        bin none                                         1742          1    Covered              
+ TYPE /axi4_pkg/axi4_cg_strobe                        100.00%        100    Covered              
+    covered/total bins:                                     3          3                      
+    missing/total bins:                                     0          3                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint axi4_cg_strobe::cp_strb                100.00%        100    Covered              
+        covered/total bins:                                 3          3                      
+        missing/total bins:                                 0          3                      
+        % Hit:                                        100.00%        100                      
+ Covergroup instance cpu_wr_strobe                    100.00%        100    Covered              
+    covered/total bins:                                     3          3                      
+    missing/total bins:                                     0          3                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint cp_strb                                100.00%        100    Covered              
+        covered/total bins:                                 3          3                      
+        missing/total bins:                                 0          3                      
+        % Hit:                                        100.00%        100                      
+        bin full                                         1917          1    Covered              
+        bin partial                                       181          1    Covered              
+        bin none                                           38          1    Covered              
+ TYPE /dma_tb_pkg/dma_cg_shape                         87.50%        100    Uncovered            
+    covered/total bins:                                    10         13                      
+    missing/total bins:                                     3         13                      
+    % Hit:                                             76.92%        100                      
+    Coverpoint dma_cg_shape::cp_len                    62.50%        100    Uncovered            
+        covered/total bins:                                 5          8                      
+        missing/total bins:                                 3          8                      
+        % Hit:                                         62.50%        100                      
+    Coverpoint dma_cg_shape::cp_bursts                100.00%        100    Covered              
+        covered/total bins:                                 3          3                      
+        missing/total bins:                                 0          3                      
+        % Hit:                                        100.00%        100                      
+    Coverpoint dma_cg_shape::cp_cross_4k              100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+ Covergroup instance dma_shape                         87.50%        100    Uncovered            
+    covered/total bins:                                    10         13                      
+    missing/total bins:                                     3         13                      
+    % Hit:                                             76.92%        100                      
+    Coverpoint cp_len                                  62.50%        100    Uncovered            
+        covered/total bins:                                 5          8                      
+        missing/total bins:                                 3          8                      
+        % Hit:                                         62.50%        100                      
+        bin one                                             1          1    Covered              
+        bin below_word                                      1          1    Covered              
+        bin one_word                                        2          1    Covered              
+        bin below_burst                                    37          1    Covered              
+        bin one_burst                                       0          1    ZERO                 
+        bin above_burst                                   243          1    Covered              
+        bin page_or_more                                    0          1    ZERO                 
+        bin very_long                                       0          1    ZERO                 
+    Coverpoint cp_bursts                              100.00%        100    Covered              
+        covered/total bins:                                 3          3                      
+        missing/total bins:                                 0          3                      
+        % Hit:                                        100.00%        100                      
+        bin one                                            38          1    Covered              
+        bin two                                            25          1    Covered              
+        bin several                                       221          1    Covered              
+    Coverpoint cp_cross_4k                            100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+        bin auto[0]                                       246          1    Covered              
+        bin auto[1]                                        38          1    Covered              
+ TYPE /dma_tb_pkg/dma_cg_align                         97.50%        100    Uncovered            
+    covered/total bins:                                    33         34                      
+    missing/total bins:                                     1         34                      
+    % Hit:                                             97.05%        100                      
+    Coverpoint dma_cg_align::cp_start                 100.00%        100    Covered              
+        covered/total bins:                                 4          4                      
+        missing/total bins:                                 0          4                      
+        % Hit:                                        100.00%        100                      
+    Coverpoint dma_cg_align::cp_end                   100.00%        100    Covered              
+        covered/total bins:                                 4          4                      
+        missing/total bins:                                 0          4                      
+        % Hit:                                        100.00%        100                      
+    Coverpoint dma_cg_align::cp_short                 100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+    Cross dma_cg_align::start_x_end                   100.00%        100    Covered              
+        covered/total bins:                                16         16                      
+        missing/total bins:                                 0         16                      
+        % Hit:                                        100.00%        100                      
+    Cross dma_cg_align::start_x_short                  87.50%        100    Uncovered            
+        covered/total bins:                                 7          8                      
+        missing/total bins:                                 1          8                      
+        % Hit:                                         87.50%        100                      
+ Covergroup instance dma_align                         97.50%        100    Uncovered            
+    covered/total bins:                                    33         34                      
+    missing/total bins:                                     1         34                      
+    % Hit:                                             97.05%        100                      
+    Coverpoint cp_start                               100.00%        100    Covered              
+        covered/total bins:                                 4          4                      
+        missing/total bins:                                 0          4                      
+        % Hit:                                        100.00%        100                      
+        bin auto[0]                                        77          1    Covered              
+        bin auto[1]                                        67          1    Covered              
+        bin auto[2]                                        70          1    Covered              
+        bin auto[3]                                        70          1    Covered              
+    Coverpoint cp_end                                 100.00%        100    Covered              
+        covered/total bins:                                 4          4                      
+        missing/total bins:                                 0          4                      
+        % Hit:                                        100.00%        100                      
+        bin auto[0]                                        70          1    Covered              
+        bin auto[1]                                        69          1    Covered              
+        bin auto[2]                                        74          1    Covered              
+        bin auto[3]                                        71          1    Covered              
+    Coverpoint cp_short                               100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+        bin up_to_a_word                                    4          1    Covered              
+        bin longer                                        280          1    Covered              
+    Cross start_x_end                                 100.00%        100    Covered              
+        covered/total bins:                                16         16                      
+        missing/total bins:                                 0         16                      
+        % Hit:                                        100.00%        100                      
+        bin <auto[0],auto[1]>                              19          1    Covered              
+        bin <auto[1],auto[1]>                              11          1    Covered              
+        bin <auto[0],auto[2]>                              21          1    Covered              
+        bin <auto[1],auto[2]>                              18          1    Covered              
+        bin <auto[2],auto[2]>                              19          1    Covered              
+        bin <auto[1],auto[3]>                              18          1    Covered              
+        bin <auto[2],auto[3]>                              18          1    Covered              
+        bin <auto[3],auto[3]>                              19          1    Covered              
+        bin <auto[0],auto[0]>                              21          1    Covered              
+        bin <auto[1],auto[0]>                              20          1    Covered              
+        bin <auto[3],auto[0]>                              20          1    Covered              
+        bin <auto[3],auto[1]>                              15          1    Covered              
+        bin <auto[3],auto[2]>                              16          1    Covered              
+        bin <auto[0],auto[3]>                              16          1    Covered              
+        bin <auto[2],auto[1]>                              24          1    Covered              
+        bin <auto[2],auto[0]>                               9          1    Covered              
+    Cross start_x_short                                87.50%        100    Uncovered            
+        covered/total bins:                                 7          8                      
+        missing/total bins:                                 1          8                      
+        % Hit:                                         87.50%        100                      
+        bin <auto[2],up_to_a_word>                          2          1    Covered              
+        bin <auto[0],longer>                               76          1    Covered              
+        bin <auto[1],longer>                               67          1    Covered              
+        bin <auto[2],longer>                               68          1    Covered              
+        bin <auto[3],longer>                               69          1    Covered              
+        bin <auto[3],up_to_a_word>                          1          1    Covered              
+        bin <auto[0],up_to_a_word>                          1          1    Covered              
+        bin <auto[1],up_to_a_word>                          0          1    ZERO                 
+ TYPE /dma_tb_pkg/dma_cg_rd_error                      66.66%        100    Uncovered            
+    covered/total bins:                                     2          3                      
+    missing/total bins:                                     1          3                      
+    % Hit:                                             66.66%        100                      
+    Coverpoint dma_cg_rd_error::cp_err                 66.66%        100    Uncovered            
+        covered/total bins:                                 2          3                      
+        missing/total bins:                                 1          3                      
+        % Hit:                                         66.66%        100                      
+ Covergroup instance dma_rd_error                      66.66%        100    Uncovered            
+    covered/total bins:                                     2          3                      
+    missing/total bins:                                     1          3                      
+    % Hit:                                             66.66%        100                      
+    Coverpoint cp_err                                  66.66%        100    Uncovered            
+        covered/total bins:                                 2          3                      
+        missing/total bins:                                 1          3                      
+        % Hit:                                         66.66%        100                      
+        bin none                                          272          1    Covered              
+        bin slverr                                          0          1    ZERO                 
+        bin decerr                                          8          1    Covered              
+ TYPE /dma_tb_pkg/dma_cg_wr_error                      66.66%        100    Uncovered            
+    covered/total bins:                                     2          3                      
+    missing/total bins:                                     1          3                      
+    % Hit:                                             66.66%        100                      
+    Coverpoint dma_cg_wr_error::cp_err                 66.66%        100    Uncovered            
+        covered/total bins:                                 2          3                      
+        missing/total bins:                                 1          3                      
+        % Hit:                                         66.66%        100                      
+ Covergroup instance dma_wr_error                      66.66%        100    Uncovered            
+    covered/total bins:                                     2          3                      
+    missing/total bins:                                     1          3                      
+    % Hit:                                             66.66%        100                      
+    Coverpoint cp_err                                  66.66%        100    Uncovered            
+        covered/total bins:                                 2          3                      
+        missing/total bins:                                 1          3                      
+        % Hit:                                         66.66%        100                      
+        bin none                                          272          1    Covered              
+        bin slverr                                          0          1    ZERO                 
+        bin decerr                                          4          1    Covered              
+
+TOTAL COVERGROUP COVERAGE: 91.77%  COVERGROUP TYPES: 16
