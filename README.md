@@ -219,7 +219,7 @@ Regression chính và số coverage được đo với các macro này bật (xe
 RTL gốc và các bản sửa một phần được build riêng (`xbar_orig`, `xbar_fix02`, `xbar_fix06`, `xbar_fix07`, `dma_wr_orig`,
 `cdma_orig`) để chạy các test minh hoạ lỗi (đánh dấu XFAIL). Năm build `ram_up`, `dma_rd_up`, `dma_wr_up`, `cdma_up`
 (và `xbar_orig`) chạy trên RTL gốc để lấy kết quả ở mục [Chạy trên mã gốc](#chạy-trên-mã-gốc-nguyên-bản).
-Việc có đưa các bản sửa vào thiết kế hay không là quyết định của người thiết kế.
+
 
 ## Phạm vi và hạn chế
 
